@@ -1,11 +1,11 @@
-public class Validate{
+public class ValidateUserDetails {
 
     @FunctionalInterface
      interface validate {
-        boolean validateName(String name);
+        boolean validateDetails(String details);
     }
 
-
+    
     public static validate validateFirstName() {
         return firstName -> firstName.matches("^[A-Z][a-z]{2,}");
     }
@@ -28,34 +28,34 @@ public class Validate{
     }
 
     public static void main(String[] args) {
-        boolean isValidFirstName = Validate.validateFirstName().validateName("Shekhar");
+        boolean isValidFirstName = ValidateUserDetails.validateFirstName().validateDetails("Shekhar");
         System.out.println(isValidFirstName);
 
-        boolean isInavalidFirstName = Validate.validateFirstName().validateName("sddsa");
+        boolean isInavalidFirstName = ValidateUserDetails.validateFirstName().validateDetails("sddsa");
         System.out.println(isInavalidFirstName);
 
-        boolean isValidLastName = Validate.validateLastName().validateName("Jha");
+        boolean isValidLastName = ValidateUserDetails.validateLastName().validateDetails("Jha");
         System.out.println(isValidLastName);
 
-        boolean isInavalidLastName = Validate.validateLastName().validateName("sddwsa");
+        boolean isInavalidLastName = ValidateUserDetails.validateLastName().validateDetails("sddwsa");
         System.out.println(isInavalidLastName);
 
-        boolean isValidEmail = Validate.validateEmail().validateName("shek-asd@gmail.co1.in");
+        boolean isValidEmail = ValidateUserDetails.validateEmail().validateDetails("shek-asd@gmail.co1.in");
         System.out.println(isValidEmail);
 
-        boolean isInValidEmail = Validate.validateEmail().validateName("shek-asd122@gmail.co1.in.");
+        boolean isInValidEmail = ValidateUserDetails.validateEmail().validateDetails("shek-asd122@gmail.co1.in.");
         System.out.println(isInValidEmail);
 
-        boolean isValidPhoneNo = Validate.validatePhoneNO().validateName("91 1234567890");
+        boolean isValidPhoneNo = ValidateUserDetails.validatePhoneNO().validateDetails("91 1234567890");
         System.out.println(isValidPhoneNo);
 
-        boolean isInValidPhoneNo = Validate.validatePhoneNO().validateName("91211234567890");
+        boolean isInValidPhoneNo = ValidateUserDetails.validatePhoneNO().validateDetails("91211234567890");
         System.out.println(isInValidPhoneNo);
 
-        boolean isValidPassword = Validate.validatePassword().validateName("Shekhar@_12");
+        boolean isValidPassword = ValidateUserDetails.validatePassword().validateDetails("Shekhar@_12");
         System.out.println(isValidPassword);
 
-        boolean isInValidPassword = Validate.validatePassword().validateName("Shekhar12");
+        boolean isInValidPassword = ValidateUserDetails.validatePassword().validateDetails("Shekhar12");
         System.out.println(isInValidPassword);
 
 
